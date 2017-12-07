@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
-
+import {Component, OnInit} from '@angular/core';
+import {AnalyticsService} from './@core/utils/analytics.service';
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: '<router-outlet></router-outlet>',
 })
-export class AppComponent {
-  title = 'app';
+export class AppComponent implements OnInit {
+  constructor(private analytics: AnalyticsService) {
+  }
+
+  ngOnInit(): void {
+    this.analytics.trackPageViews();
+  }
 }
