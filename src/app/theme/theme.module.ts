@@ -7,11 +7,13 @@ import {
   NbLayoutModule, NbThemeModule
 } from '@nebular/theme';
 
+import {DEFAULT_THEME} from './styles/theme.default';
+import {COSMIC_THEME} from './styles/theme.cosmic';
 const NB_MODULES = [
   NbLayoutModule
 ];
 const NB_THEME_PROVIDERS = [
-  ...NbThemeModule.forRoot({name: 'default'}).providers
+  ...NbThemeModule.forRoot({name: 'cosmic'}, [DEFAULT_THEME, COSMIC_THEME]).providers
 ];
 @NgModule({
   imports: [...NB_MODULES],
