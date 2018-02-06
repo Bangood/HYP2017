@@ -3,8 +3,11 @@
  */
 import {ModuleWithProviders, NgModule} from '@angular/core';
 import {NbAuthModule, NbDummyAuthProvider} from '@nebular/auth';
+//
+import {DataModule} from './data/data.module';
 
 const NB_CORE_PROVIDERS = [
+  ...DataModule.forRoot().providers,
   ...NbAuthModule.forRoot({
     providers: {
       email: {
