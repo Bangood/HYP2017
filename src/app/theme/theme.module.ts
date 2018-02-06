@@ -6,15 +6,20 @@ import {NgModule, ModuleWithProviders} from '@angular/core';
 import {CommonModule} from '@angular/common';
 //
 import {
+  NbActionsModule,
   NbLayoutModule,
   NbMenuModule,
+  NbSearchModule,
   NbSidebarModule,
-  NbThemeModule
+  NbThemeModule,
+  NbUserModule
 } from '@nebular/theme';
 //
 import {
   ThemeSwitcherComponent,
+  HeaderComponent
 } from './components';
+import {SampleLayoutComponent} from './layouts';
 
 import {DEFAULT_THEME} from './styles/theme.default';
 import {COSMIC_THEME} from './styles/theme.cosmic';
@@ -25,10 +30,15 @@ const BASE_MODULES = [
 const NB_MODULES = [
   NbLayoutModule,
   NbSidebarModule,
-  NbMenuModule
+  NbMenuModule,
+  NbActionsModule,
+  NbSearchModule,
+  NbUserModule
 ];
 const COMPONENTS = [
   ThemeSwitcherComponent,
+  HeaderComponent,
+  SampleLayoutComponent
 ];
 const NB_THEME_PROVIDERS = [
   ...NbThemeModule.forRoot({name: 'cosmic'}, [DEFAULT_THEME, COSMIC_THEME]).providers,
