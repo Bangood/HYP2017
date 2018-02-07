@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleSettings(): boolean {
-    this._sidebarService.toggle(false, 'setting-sidebar');
+    this._sidebarService.toggle(false, 'settings-sidebar');
     return false;
   }
 

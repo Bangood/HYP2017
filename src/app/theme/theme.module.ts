@@ -17,7 +17,9 @@ import {
 //
 import {
   ThemeSwitcherComponent,
-  HeaderComponent
+  ThemeSettingsComponent,
+  HeaderComponent,
+  FooterComponent
 } from './components';
 import {SampleLayoutComponent} from './layouts';
 
@@ -37,12 +39,15 @@ const NB_MODULES = [
 ];
 const COMPONENTS = [
   ThemeSwitcherComponent,
+  ThemeSettingsComponent,
   HeaderComponent,
+  FooterComponent,
   SampleLayoutComponent
 ];
 const NB_THEME_PROVIDERS = [
   ...NbThemeModule.forRoot({name: 'cosmic'}, [DEFAULT_THEME, COSMIC_THEME]).providers,
-  ...NbSidebarModule.forRoot().providers
+  ...NbSidebarModule.forRoot().providers,
+  ...NbMenuModule.forRoot().providers
 ];
 @NgModule({
   imports: [...BASE_MODULES, ...NB_MODULES],

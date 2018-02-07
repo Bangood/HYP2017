@@ -5,8 +5,10 @@
 import {NgModule, ModuleWithProviders} from '@angular/core';
 //
 import {UserService} from './users.service';
+import {StateService} from './state.service';
 const SERVICES = [
-  UserService
+  UserService,
+  StateService
 ];
 @NgModule({
   imports: [],
