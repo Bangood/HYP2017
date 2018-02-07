@@ -5,7 +5,9 @@ import {Component} from '@angular/core';
 @Component({
   selector: 'hyp-pages',
   template: `
-    <router-outlet></router-outlet>
+    <hyp-sample-layout>
+      <router-outlet></router-outlet>
+    </hyp-sample-layout>
   `
 })
 export class PagesComponent {
