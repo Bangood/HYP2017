@@ -12,6 +12,9 @@ const routes: Routes = [{
   children: [{
     path: 'dashboard',
     component: DashboardComponent
+  },{
+    path: 'primitive',
+    loadChildren: './primitive/primitive.module#PrimitiveModule'
   }]
 }];
 @NgModule({

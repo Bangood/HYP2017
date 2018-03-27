@@ -7,12 +7,14 @@ import {CommonModule} from '@angular/common';
 //
 import {
   NbActionsModule,
+  NbCardModule,
   NbLayoutModule,
   NbMenuModule,
   NbSearchModule,
   NbSidebarModule,
   NbThemeModule,
-  NbUserModule
+  NbUserModule,
+  NbCheckboxModule
 } from '@nebular/theme';
 //
 import {
@@ -30,12 +32,14 @@ const BASE_MODULES = [
   CommonModule
 ];
 const NB_MODULES = [
+  NbCardModule,
   NbLayoutModule,
   NbSidebarModule,
   NbMenuModule,
   NbActionsModule,
   NbSearchModule,
-  NbUserModule
+  NbUserModule,
+  NbCheckboxModule
 ];
 const COMPONENTS = [
   ThemeSwitcherComponent,

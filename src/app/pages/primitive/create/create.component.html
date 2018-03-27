@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-lg-12">
+    <nb-card>
+      <nb-card-header>新建</nb-card-header>
+      <nb-card-body>
+        <form (ngSubmit)="create()" #primitiveForm="ngForm">
+          <div class="row full-name-inputs">
+            <div class="col-sm-4 input-group">
+              <input type="text" placeholder="姓名" class="form-control" [(ngModel)]="primitive.name" name="name"/>
+            </div>
+            <div class="col-sm-4 input-group">
+              <input type="number" placeholder="人物索引" class="form-control" [(ngModel)]="primitive.dbIndex"
+                     name="dbIndex"/>
+            </div>
+            <div class="col-sm-4 input-group">
+              <input type="number" placeholder="照片数量" class="form-control" [(ngModel)]="primitive.imgNum"
+                     name="imgNum"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <select class="form-control" [(ngModel)]="primitive.race" name="race">
+              <option>人种</option>
+              <option value=0>未知</option>
+              <option value=1>白色人种</option>
+              <option value=2>黄种人种</option>
+              <option value=3>黑种人种</option>
+              <option value=4>棕种人种</option>
+              <option value=5>混血人种</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <select class="form-control" [(ngModel)]="primitive.type" name="type">
+              <option>人物类型</option>
+              <option value=0>未知</option>
+              <option value=1>幼女</option>
+              <option value=2>少女</option>
+              <option value=3>少妇</option>
+              <option value=4>熟妇</option>
+            </select>
+          </div>
+
+          <div class="form-group validation-checkboxes row">
+            <nb-checkbox status="success" class="col-sm-4" [(ngModel)]="primitive.isSelected" name="isSelected">是否被选中
+            </nb-checkbox>
+          </div>
+          <button type="submit" [disabled]="submitted" class="btn btn-primary">创建
+          </button>
+        </form>
+      </nb-card-body>
+    </nb-card>
+
+
+  </div>
+
+</div>

@@ -44,8 +44,14 @@ export const MENU_ITEM: NbMenuItem[] = [
   }, {
     title: '群芳谱',
     icon: 'nb-keypad',
-    link: '',
-    children: []
+    link: '/pages/primitive',
+    children: [{
+      title: '新增',
+      link: '/pages/primitive/create'
+    }, {
+      title: '列表',
+      link: '/pages/primitive/list'
+    }]
   }, {
     title: '红颜楼',
     icon: 'nb-keypad',
