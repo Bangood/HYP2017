@@ -1,8 +1,8 @@
 /**
  * Created by pure on 2018/2/2.
  */
-import {NgModule} from '@angular/core';
-import {ExtraOptions, RouterModule, Routes} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 
 import {
   NbAuthComponent,
@@ -12,8 +12,14 @@ import {
   NbRequestPasswordComponent,
   NbResetPasswordComponent,
 } from '@nebular/auth';
+
+import { AuthGuard } from './auth-guard.service';
 const routes: Routes = [
-  {path: 'pages', loadChildren: 'app/pages/pages.module#PagesModule'},
+  {
+    path: 'pages',
+    canActivate: [AuthGuard],
+    loadChildren: 'app/pages/pages.module#PagesModule'
+  },
   {
     path: 'auth',
     component: NbAuthComponent,
@@ -44,8 +50,8 @@ const routes: Routes = [
       },
     ],
   },
-  {path: '', redirectTo: 'pages', pathMatch: 'full'},
-  {path: '**', redirectTo: 'pages'}
+  { path: '', redirectTo: 'pages', pathMatch: 'full' },
+  { path: '**', redirectTo: 'pages' }
 ];
 const config: ExtraOptions = {
   useHash: true
